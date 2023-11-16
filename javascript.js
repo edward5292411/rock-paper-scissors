@@ -9,4 +9,24 @@ let arr = ["rock", "paper", "scissor"];
 function getComputerChoice(){
     return arr[Math.floor(Math.random() * arr.length)];
 }
-console.log(getComputerChoice());
+
+function playRound(playerSelection, computerSelection){
+    if(playerSelection === computerSelection){
+        return "A Tie!";
+    } else if((playerSelection = "\rock\i") && (computerSelection = "scissor")){
+        return "You Win! Rock beats Scissor";
+    } else if((playerSelection = "\paper\i") && (computerSelection = "rock")){
+        return "You Win! Paper beats Rock";
+    } else if((playerSelection = "\scissor\i") && (computerSelection = "paper")){
+        return "You Win! Scissor beats Paper";
+    } else if((playerSelection = "\scissor\i") && (computerSelection = "rock")){
+        return "You lose! Rock beats Scissor";
+    } else if((playerSelection = "\rock\i") && (computerSelection = "paper")){
+        return "You lose! Paper beats Rock";
+    } else {
+        return "You lose! Scissor beats Paper";
+}
+
+let playerSelection = prompt("What's your selection? Enter either Paper, Rock or Scissors", "");
+let computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
