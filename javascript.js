@@ -40,19 +40,19 @@ function getComputerChoice(){
     
 function playRound(playerSelection, computerSelection){
         if(playerSelection === computerSelection){
-            return "A Tie!";
-        } else if((playerSelection = "\rock\i") && (computerSelection = "scissors")){
-            return "You Win!";
-        } else if((playerSelection = "\paper\i") && (computerSelection = "rock")){
-            return "You Win!";
-        } else if((playerSelection = "\scissors\i") && (computerSelection = "paper")){
-            return "You Win!";
-        } else if((playerSelection = "\scissors\i") && (computerSelection = "rock")){
-            return "You lose!";
-        } else if((playerSelection = "\rock\i") && (computerSelection = "paper")){
-            return "You lose!";
+            msgPara.textContent = "A Tie!";
+        } else if((playerSelection === "\rock\i") && (computerSelection === "scissors")){
+            msgPara.textContent = "You Win! Rock beats Scissors";
+        } else if((playerSelection === "\paper\i") && (computerSelection === "rock")){
+            msgPara.textContent = "You Win! Paper beats Rock";
+        } else if((playerSelection === "\scissors\i") && (computerSelection === "paper")){
+            msgPara.textContent = "You Win! Scissors beat paper";
+        } else if((playerSelection === "\scissors\i") && (computerSelection === "rock")){
+            msgPara.textContent = "You lose! Rock beats scissors";
+        } else if((playerSelection === "\rock\i") && (computerSelection === "paper")){
+            msgPara.textContent = "You lose! Paper beats rock";
         } else {
-            return "You lose!";
+            msgPara.textContent = "You lose! Scissors beat paper";
         }
 }
 
