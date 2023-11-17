@@ -18,8 +18,8 @@ let div = document.querySelector('div');
 let scorePara = document.createElement('p');
 let msgPara = document.createElement('p');
 
-div.document.body.appendChild(scorePara);
-div.document.body.appendChild(msgPara);
+div.appendChild(scorePara);
+div.appendChild(msgPara);
 updateScore();
 
 let computerSelection = getComputerChoice();
