@@ -20,6 +20,7 @@ let msgPara = document.createElement('p');
 
 div.document.body.appendChild(scorePara);
 div.document.body.appendChild(msgPara);
+updateScore();
 
 let computerSelection = getComputerChoice();
 
@@ -63,4 +64,16 @@ function playRound(playerSelection, computerSelection){
         announceWinner();
 }
 
-console.log(playRound(playerSelection, computerSelection));
+function updateScore(){
+    scorePara.textContent = `Player score is ${playerScore} vs Computer score is ${computerScore}.`;
+}
+
+function announceWinner(){
+    if(playerScore >=5){
+        confirm("You Won!");
+        window.location.reload();
+    } else if(computerScore>=5){
+        confirm("You lost!");
+        window.location.reload();
+    }
+}
