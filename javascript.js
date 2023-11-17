@@ -43,16 +43,22 @@ function playRound(playerSelection, computerSelection){
             msgPara.textContent = "A Tie!";
         } else if((playerSelection === "\rock\i") && (computerSelection === "scissors")){
             msgPara.textContent = "You Win! Rock beats Scissors";
+            playerScore++;
         } else if((playerSelection === "\paper\i") && (computerSelection === "rock")){
             msgPara.textContent = "You Win! Paper beats Rock";
+            playerScore++;
         } else if((playerSelection === "\scissors\i") && (computerSelection === "paper")){
             msgPara.textContent = "You Win! Scissors beat paper";
+            playerScore++;
         } else if((playerSelection === "\scissors\i") && (computerSelection === "rock")){
             msgPara.textContent = "You lose! Rock beats scissors";
+            computerScore++;
         } else if((playerSelection === "\rock\i") && (computerSelection === "paper")){
             msgPara.textContent = "You lose! Paper beats rock";
+            computerScore++;
         } else {
             msgPara.textContent = "You lose! Scissors beat paper";
+            computerScore++;
         }
 }
 
