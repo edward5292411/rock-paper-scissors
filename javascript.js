@@ -14,6 +14,14 @@ let moves = 0;
 let rockBtn = document.querySelector('#rock');
 let paperBtn = document.querySelector('#paper');
 let scissorsBtn = document.querySelector('#scissors');
+
+let div = document.querySelector('div');
+let scorePara = document.createElement('p');
+let msgPara = document.createElement('p');
+
+div.document.body.appendChild(scorePara);
+div.document.body.appendChild(msgPara);
+
 let playerSelection = [rockBtn, paperBtn, scissorsBtn];
 let computerSelection = getComputerChoice();
 
