@@ -6,25 +6,31 @@
 /* Put previous playRound function inside a game function to play a 5 round game that keeps score and reports winner or loser at the end */
 
 
-let game = () => {
-    let playerScore = 0;
-    let computerScore = 0;
-    let moves = 0;
 
-    let playGame = () => {
-        let rockBtn = document.querySelector('#rock');
-        let paperBtn = document.querySelector('#paper');
-        let scissorsBtn = document.querySelector('#scissors');
-        let playerSelection = [rockBtn, paperBtn, scissorsBtn];
-        let computerSelection = getComputerChoice();
-    }
+let playerScore = 0;
+let computerScore = 0;
+let moves = 0;
 
-    function getComputerChoice(){
+let rockBtn = document.querySelector('#rock');
+let paperBtn = document.querySelector('#paper');
+let scissorsBtn = document.querySelector('#scissors');
+let playerSelection = [rockBtn, paperBtn, scissorsBtn];
+let computerSelection = getComputerChoice();
+
+rockBtn.addEventListener('click', () => getPlayerChoice('rock'));
+paperBtn.addEventListener('click', () => getPlayerChoice('paper'));
+scissorsBtn.addEventListener('click', () => getPlayerChoice('scissors'));
+
+function getPlayerChoice(playerSelection){
+    playRound(playerSelection, computerSelection);
+}
+
+function getComputerChoice(){
         let arr = ["rock", "paper", "scissors"];
         return arr[Math.floor(Math.random() * arr.length)];
     }
     
-    function playRound(playerSelection, computerSelection){
+function playRound(playerSelection, computerSelection){
         if(playerSelection === computerSelection){
             return "A Tie!";
         } else if((playerSelection = "\rock\i") && (computerSelection = "scissors")){
@@ -40,6 +46,6 @@ let game = () => {
         } else {
             return "You lose!";
         }
-    }
-
 }
+
+console.log(playRound(playerSelection, computerSelection));
