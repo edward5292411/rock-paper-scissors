@@ -9,7 +9,6 @@
 
 let playerScore = 0;
 let computerScore = 0;
-let moves = 0;
 
 let rockBtn = document.querySelector('#rock');
 let paperBtn = document.querySelector('#paper');
@@ -22,7 +21,6 @@ let msgPara = document.createElement('p');
 div.document.body.appendChild(scorePara);
 div.document.body.appendChild(msgPara);
 
-let playerSelection = [rockBtn, paperBtn, scissorsBtn];
 let computerSelection = getComputerChoice();
 
 rockBtn.addEventListener('click', () => getPlayerChoice('rock'));
@@ -41,25 +39,28 @@ function getComputerChoice(){
 function playRound(playerSelection, computerSelection){
         if(playerSelection === computerSelection){
             msgPara.textContent = "A Tie!";
-        } else if((playerSelection === "\rock\i") && (computerSelection === "scissors")){
+        } else if((playerSelection === "rock") && (computerSelection === "scissors")){
             msgPara.textContent = "You Win! Rock beats Scissors";
             playerScore++;
-        } else if((playerSelection === "\paper\i") && (computerSelection === "rock")){
+        } else if((playerSelection === "paper") && (computerSelection === "rock")){
             msgPara.textContent = "You Win! Paper beats Rock";
             playerScore++;
-        } else if((playerSelection === "\scissors\i") && (computerSelection === "paper")){
+        } else if((playerSelection === "scissors") && (computerSelection === "paper")){
             msgPara.textContent = "You Win! Scissors beat paper";
             playerScore++;
-        } else if((playerSelection === "\scissors\i") && (computerSelection === "rock")){
+        } else if((playerSelection === "scissors") && (computerSelection === "rock")){
             msgPara.textContent = "You lose! Rock beats scissors";
             computerScore++;
-        } else if((playerSelection === "\rock\i") && (computerSelection === "paper")){
+        } else if((playerSelection === "rock") && (computerSelection === "paper")){
             msgPara.textContent = "You lose! Paper beats rock";
             computerScore++;
         } else {
             msgPara.textContent = "You lose! Scissors beat paper";
             computerScore++;
         }
+
+        updateScore();
+        announceWinner();
 }
 
 console.log(playRound(playerSelection, computerSelection));
