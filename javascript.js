@@ -12,7 +12,10 @@ let game = () => {
     let moves = 0;
 
     let playGame = () => {
-        let playerSelection = prompt("What is your selection? Type either Rock, Paper or Scissors.", "");
+        let rockBtn = document.querySelector('#rock');
+        let paperBtn = document.querySelector('#paper');
+        let scissorsBtn = document.querySelector('#scissors');
+        let playerSelection = [rockBtn, paperBtn, scissorsBtn];
         let computerSelection = getComputerChoice();
     }
 
