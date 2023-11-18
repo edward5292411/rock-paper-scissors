@@ -75,12 +75,12 @@ function updateScore(){
 function announceWinner(){
     if(playerScore >= 5){
         resultStatement.textContent = "You Won this game! Press Reset to start over";
-        if(playerScore >= 6){
+        if(playerScore >= 6 || computerScore >= 6){
             window.location.reload();
         };
     } else if(computerScore>=5){
         resultStatement.textContent = "You lost this game! Press Reset to start over";
-        if(computerScore >= 6){
+        if(computerScore >= 6 || computerScore >= 6){
             window.location.reload();
         }
     }
