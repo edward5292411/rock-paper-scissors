@@ -13,13 +13,16 @@ let computerScore = 0;
 let rockBtn = document.querySelector('#rock');
 let paperBtn = document.querySelector('#paper');
 let scissorsBtn = document.querySelector('#scissors');
+let resetBtn = document.querySelector('#reset')
 
 let div = document.querySelector('div');
 let scorePara = document.createElement('p');
 let msgPara = document.createElement('p');
+let resultStatement = document.createElement('p');
 
 div.appendChild(scorePara);
 div.appendChild(msgPara);
+div.appendChild(resultStatement);
 updateScore();
 
 let computerSelection = getComputerChoice();
@@ -27,6 +30,7 @@ let computerSelection = getComputerChoice();
 rockBtn.addEventListener('click', () => getPlayerChoice('rock'));
 paperBtn.addEventListener('click', () => getPlayerChoice('paper'));
 scissorsBtn.addEventListener('click', () => getPlayerChoice('scissors'));
+resetBtn.addEventListener('click', () => window.location.reload());
 
 function getPlayerChoice(playerSelection){
     playRound(playerSelection, computerSelection);
@@ -70,10 +74,8 @@ function updateScore(){
 
 function announceWinner(){
     if(playerScore >=5){
-        confirm("You Won!");
-        window.location.reload();
+        resultStatement.textContent = "You Won this game! Press Reset to start over";
     } else if(computerScore>=5){
-        confirm("You lost!");
-        window.location.reload();
+        resultStatement.textContent = "You lost this game! Press Reset to start over";
     }
 }
