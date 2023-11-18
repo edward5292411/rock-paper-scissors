@@ -10,22 +10,20 @@
 let playerScore = 0;
 let computerScore = 0;
 
-let rockBtn = document.querySelector('#rock');
-let paperBtn = document.querySelector('#paper');
-let scissorsBtn = document.querySelector('#scissors');
-let resetBtn = document.querySelector('#reset')
+const rockBtn = document.querySelector('#rock');
+const paperBtn = document.querySelector('#paper');
+const scissorsBtn = document.querySelector('#scissors');
+const resetBtn = document.querySelector('#reset')
 
-let div = document.querySelector('div');
-let scorePara = document.createElement('p');
-let msgPara = document.createElement('p');
-let resultStatement = document.createElement('p');
+const div = document.querySelector('div');
+const scorePara = document.createElement('p');
+const msgPara = document.createElement('p');
+const resultStatement = document.createElement('p');
 
 div.appendChild(scorePara);
 div.appendChild(msgPara);
 div.appendChild(resultStatement);
 updateScore();
-
-let computerSelection = getComputerChoice();
 
 rockBtn.addEventListener('click', () => getPlayerChoice('rock'));
 paperBtn.addEventListener('click', () => getPlayerChoice('paper'));
@@ -33,6 +31,7 @@ scissorsBtn.addEventListener('click', () => getPlayerChoice('scissors'));
 resetBtn.addEventListener('click', () => window.location.reload());
 
 function getPlayerChoice(playerSelection){
+    const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection);
 }
 
@@ -42,6 +41,7 @@ function getComputerChoice(){
     }
     
 function playRound(playerSelection, computerSelection){
+
         if(playerSelection === computerSelection){
             msgPara.textContent = "A Tie!";
         } else if((playerSelection === "rock") && (computerSelection === "scissors")){
